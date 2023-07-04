@@ -1,6 +1,9 @@
 const express = require('express');
 const db = require("./utils/database");
 const Todos = require("./models/todos.model")
+require("dotenv").config()
+
+const PORT = process.env.PORT ?? 8000
 
 const app = express();
 
@@ -98,6 +101,6 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 })
 
-app.listen(8000, () => {
-    console.log("servidor corriendo");
+app.listen(PORT, () => {
+    console.log(`servidor en el puerto ${PORT}`);
 })
