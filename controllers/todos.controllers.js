@@ -17,7 +17,7 @@ const createTodo = async (req, res) => {
 const getAllTodos = async (req, res) => {
     try {
         const todos = await Todos.findAll({
-            include: Users, Categories
+            include: [Users, Categories]
         })
         res.json(todos)
 
@@ -30,7 +30,7 @@ const getTodoById = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const to_do = await Todos.findByPk(id, {include: Users, Categories})
+        const to_do = await Todos.findByPk(id, {include:[Users, Categories]})
 
         res.json(to_do);
 
