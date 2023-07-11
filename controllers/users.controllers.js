@@ -17,7 +17,7 @@ const createUser = async (req, res) => {
 const getAllUsers = async (req, res) => {
     try {
         const users = await Users.findAll({
-            include: [Todos, Categories],
+            include: Todos,
             attributes: {
                 exclude: ['password']
             }
@@ -33,7 +33,7 @@ const getUserById = async (req, res) => {
     try {
         const { id } = req.params;
         const user = Users.findByPk(id, {
-            include: [Todos, Categories], 
+            include: Todos, 
             attributes: {
                 exclude: ['password']
             }
