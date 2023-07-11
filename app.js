@@ -20,7 +20,7 @@ db.authenticate()
 })
 .catch(error => console.log(error));
 
-db.sync({force: true})
+db.sync()
 .then(() => console.log("base de datos sincronizada"))
 
 
