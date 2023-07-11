@@ -12,8 +12,16 @@ const Todos = db.define('todos', {
         allowNull: true
     },
     completed: {
-        type: DataTypes.STRING,
-        defaultValue: 'pendiente',
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+    },
+    category_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
 })
 
